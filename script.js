@@ -127,7 +127,7 @@ function createTrailDot() {
         position: fixed;
         width: 4px;
         height: 4px;
-        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        background: linear-gradient(135deg, #d4af37, #f3e5ab);
         border-radius: 50%;
         pointer-events: none;
         z-index: 9999;
@@ -205,5 +205,5 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
-console.log('%c🎨 Portfolio Dark Theme', 'color: #6366f1; font-size: 20px; font-weight: bold;');
-console.log('%cMade with ❤️ by Antigravity', 'color: #8b5cf6; font-size: 14px;');
+console.log('%c✨ Titus Muchoki — Portfolio', 'color: #d4af37; font-size: 20px; font-weight: bold;');
+console.log('%cCo-Founder & Developer at Connect Inc', 'color: #f3e5ab; font-size: 14px;');

@@ -11,27 +11,27 @@
 
 :root {
     /* Dark Theme Color Palette */
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #13131a;
-    --bg-tertiary: #1a1a24;
-    --bg-card: #1e1e2e;
-    --bg-hover: #252535;
+    --bg-primary: #0a0a0c;
+    --bg-secondary: #111115;
+    --bg-tertiary: #18181f;
+    --bg-card: #15151b;
+    --bg-hover: #1f1f28;
     
-    /* Text Colors */
-    --text-primary: #e8e8f0;
-    --text-secondary: #a8a8b8;
-    --text-tertiary: #787888;
-    --text-muted: #58586a;
+    /* Text Colors - Dark White / Warm Alabaster & Crisp White */
+    --text-primary: #ffffff;
+    --text-secondary: #e2ddd5;
+    --text-tertiary: #9c978f;
+    --text-muted: #66635d;
     
-    /* Accent Colors */
-    --accent-primary: #6366f1;
-    --accent-secondary: #8b5cf6;
-    --accent-tertiary: #ec4899;
-    --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+    /* Accent Colors - Touch of Golden */
+    --accent-primary: #d4af37;
+    --accent-secondary: #f3e5ab;
+    --accent-tertiary: #aa771c;
+    --accent-gradient: linear-gradient(135deg, #d4af37 0%, #f6e27a 50%, #b8860b 100%);
     
     /* Border Colors */
-    --border-color: #2a2a3a;
-    --border-hover: #3a3a4a;
+    --border-color: #24242e;
+    --border-hover: #3d3d4d;
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -78,7 +78,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(10, 10, 15, 0.8);
+    background: rgba(10, 10, 12, 0.85);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     padding: var(--spacing-sm) 0;
@@ -157,7 +157,7 @@ body {
     transform: translateX(-50%);
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
     pointer-events: none;
     animation: pulse 8s ease-in-out infinite;
 }
@@ -291,7 +291,7 @@ body {
     background: var(--bg-hover);
     color: var(--text-primary);
     transform: translateY(-4px);
-    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
 }
 
 /* ===================================
@@ -303,9 +303,8 @@ body {
 }
 
 .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-lg);
+    display: flex;
+    justify-content: center;
     margin-bottom: var(--spacing-xl);
 }
 
@@ -317,6 +316,8 @@ body {
     transition: var(--transition-slow);
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 820px;
 }
 
 .project-card::before {
@@ -339,11 +340,25 @@ body {
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.25);
 }
 
 .project-header {
     margin-bottom: var(--spacing-md);
+}
+
+.project-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-primary);
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    padding: 4px 14px;
+    border-radius: 100px;
+    margin-bottom: var(--spacing-xs);
 }
 
 .project-title {
@@ -387,7 +402,7 @@ body {
     background: linear-gradient(
         45deg,
         transparent 30%,
-        rgba(99, 102, 241, 0.1) 50%,
+        rgba(212, 175, 55, 0.12) 50%,
         transparent 70%
     );
     animation: shimmer 3s infinite;
@@ -396,6 +411,36 @@ body {
 @keyframes shimmer {
     0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
     100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.brand-symbol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 1;
+    text-align: center;
+    padding: 0 var(--spacing-sm);
+}
+
+.brand-symbol .placeholder-text {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.brand-symbol .placeholder-sub {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 .placeholder-text {
@@ -597,7 +642,7 @@ body {
 .footer-email:hover {
     border-color: var(--accent-primary);
     transform: translateY(-4px);
-    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.25);
 }
 
 .footer-subtitle {
